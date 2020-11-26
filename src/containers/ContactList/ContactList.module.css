@@ -1,0 +1,60 @@
+.ContactList {
+  text-align: left;
+  display: inline-block;
+  border: 1px solid #1e88e5;
+  border-radius: 10px;
+  overflow: hidden
+}
+
+.AddNew button {
+  background-color: #1e88e5;
+  color: white;
+  font-weight: 600;
+  padding: 5px 10px;
+  transition: .2s
+}
+
+.AddNew button:hover {
+  background-color: rgba(30, 136, 229, 0.8);
+}
+
+.Item {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1e88e5;
+  padding: 10px;
+  transition: .2s;
+  overflow: hidden
+}
+
+.Item:hover { background-color: #c2e2fb; overflow: hidden }
+
+.Item:last-of-type { border: unset }
+
+.Left, .Right {
+  display: flex;
+  align-items: center
+}
+
+.Item .Avatar { width: 32px }
+
+.Right img { width: 22px; transition: .3s }
+
+.Right img:hover { transform: scale(1.2) }
+
+.Item span { margin-left: 5px }
+
+.Item button {
+  border: unset;
+  outline: unset;
+  background-color: unset
+}
+
+.SmallLoader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
