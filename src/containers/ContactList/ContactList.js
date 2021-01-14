@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Preloader } from '../../components/Preloader/Preloader';
 import user from '../../assets/images/user.svg';
@@ -20,12 +20,6 @@ export const ContactList = () => {
   // Attaching the state variables below to the input form fields
   const [inputName, setInputName] = useState('');
   const [inputPhone, setInputPhone] = useState('');
-  const handleNameChange = (e) => {
-    setInputName(e.target.value)
-  }
-  const handlePhoneChange = (e) => {
-    setInputPhone(e.target.value)
-  }
 
   // Setting the necessary data when the Edit button is clicked
   // and preparing the form
@@ -184,10 +178,10 @@ export const ContactList = () => {
               popUpPurpose={popUpPurpose}
               inputName={inputName}
               inputPhone={inputPhone}
-              handleNameChange={handleNameChange}
-              handlePhoneChange={handlePhoneChange}
               handleSave={handleEdit}
               handleAdding={handleAdding}
+              setInputName={setInputName}
+              setInputPhone={setInputPhone}
             />
             :
             null

@@ -1,4 +1,3 @@
-import React from 'react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { useDispatch } from 'react-redux';
 import { fetchData, userLogIn } from '../../store/actions';

@@ -8,11 +8,12 @@
   right: 0;
   bottom: 0;
   background-color: rgba(1,1,1, 0.5);
+  backdrop-filter: blur(6px)
 }
 
 .PopUpForm {
   width: 300px;
-  padding: 30px 10px;
+  padding: 40px 10px;
   background-color: white;
   border-radius: 10px;
   position: fixed;
@@ -26,11 +27,11 @@
 .PopUpForm div + div { margin-top: 10px }
 
 .PopUpForm img {
-  width: 24px;
+  width: 30px;
   position: absolute;
-  top: 3px;
-  right: 3px;
-  cursor: pointer
+  top: 6px;
+  right: 8px;
+  cursor: pointer;
 }
 
 .PopUpForm input, .PopUpForm button { width: 100%; padding: 5px }
@@ -40,3 +41,12 @@
 .PopUpForm input:focus::placeholder { color: transparent }
 
 .PopUpForm button { background-color: #1e88e5; color: white; font-weight: 600 }
+
+.ErrorBox {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%
+}
+
+.Error { color: crimson; font-weight: 600 }

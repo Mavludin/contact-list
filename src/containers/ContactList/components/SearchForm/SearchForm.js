@@ -1,5 +1,3 @@
-import React from 'react';
-
 import classes from './SearchForm.module.css';
 
 export const SearchForm = ( {handleSearch} ) => {

@@ -9,7 +9,7 @@ import {
   putAddedData, 
 } from '../store/actions'
 import { takeEvery, put, call, all, takeLeading } from 'redux-saga/effects'
-import { dataSource } from '../utils/endpoints'
+import { dataSource } from '../shared/endpoints'
 import axios from 'axios'
 
 // Fetching data
