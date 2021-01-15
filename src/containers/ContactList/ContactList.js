@@ -139,6 +139,16 @@ export const ContactList = () => {
         <SearchForm handleSearch={handleSearch} />
 
         <ul className={classes.ContactList} style={{ opacity: listOpacity }}>
+
+          {
+            !serverReady
+              ?
+              <div className={classes.SmallLoader}>
+                <img src={smallLoader} alt="small loader" />
+              </div>
+              : null
+          }
+
           {
             currentData.map((item, pos) => {
               return (
@@ -151,7 +161,7 @@ export const ContactList = () => {
                     <button onClick={() => { handlePopUpShow(item, pos) }}>
                       <img src={editIcon} alt="Edit" />
                     </button>
-                    <button onClick={() => handleDelete(item)} disabled={true ? !serverReady : false}>
+                    <button onClick={() => handleDelete(item)} disabled={serverReady ? false : true}>
                       <img src={deleteIcon} alt="Trash can" />
                     </button>
                   </div>
@@ -160,15 +170,6 @@ export const ContactList = () => {
             })
           }
         </ul>
-
-        {
-          !serverReady
-            ?
-            <div className={classes.SmallLoader}>
-              <img src={smallLoader} alt="small loader" />
-            </div>
-            : null
-        }
 
         {
           isPopUpVisible
