@@ -1,12 +1,15 @@
-import classes from './SearchForm.module.css';
+import classes from "./SearchForm.module.css";
 
-export const SearchForm = ( {handleSearch} ) => {
-
+export const SearchForm = ({ handleSearch }) => {
   return (
-    <form action="" className={classes.SearchForm}>
+    <form action="" className={classes.searchForm}>
       <div>
-        <input type="search" placeholder="Live search" onChange={(e)=>handleSearch(e.target.value)} />
+        <input
+          type="search"
+          placeholder="Live search"
+          onChange={(e) => handleSearch(e.target.value)}
+        />
       </div>
     </form>
   );
-}
+};

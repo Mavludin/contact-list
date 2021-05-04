@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 
 import closeIcon from "../../../../assets/images/close.svg";
 
@@ -14,10 +14,33 @@ export const PopUp = ({
   handleAdding,
   setInputName,
   setInputPhone,
+  isPopUpVisible,
+  handleEdit,
 }) => {
+  // Handling the Escape button click to close the form
+  useEffect(() => {
+    const handleCancel = (e) => {
+      if (e.key === "Escape") setIsPopUpVisible(false);
+    };
+    window.addEventListener("keyup", handleCancel);
+    return () => window.removeEventListener("keyup", handleCancel);
+  }, [setIsPopUpVisible]);
+
+  // Handling the Enter button click to submit the form
+  useEffect(() => {
+    const handleSubmit = (e) => {
+      if (isPopUpVisible && e.key === "Enter") {
+        if (popUpPurpose === "add") handleAdding();
+        else if (popUpPurpose === "edit") handleEdit();
+      }
+    };
+    window.addEventListener("keyup", handleSubmit);
+    return () => window.removeEventListener("keyup", handleSubmit);
+  }, [handleAdding, isPopUpVisible, popUpPurpose, handleEdit]);
+
   return (
     <Fragment>
-      <div className={classes.Overlay}></div>
+      <div className={classes.overlay}></div>
       <Formik
         initialValues={{ name: inputName, phone: inputPhone }}
         validate={(values) => {
@@ -34,7 +57,7 @@ export const PopUp = ({
           popUpPurpose === "edit" ? handleSave() : handleAdding();
         }}
       >
-        <Form action="" className={classes.PopUpForm}>
+        <Form action="" className={classes.popUpForm}>
           <img
             src={closeIcon}
             alt="Close"
@@ -53,11 +76,11 @@ export const PopUp = ({
               <button type="submit">Add</button>
             )}
           </div>
-          <div className={classes.ErrorBox}>
+          <div className={classes.errorBox}>
             <ErrorMessage
               name="name"
               component="div"
-              className={classes.Error}
+              className={classes.error}
             />
           </div>
         </Form>

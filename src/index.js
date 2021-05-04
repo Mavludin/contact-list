@@ -1,25 +1,15 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
-import { reducer } from './store/reducer';
-import createSagaMiddleWare from 'redux-saga';
-import { rootSaga } from './saga/sagas';
+import { mainStore, runSagaMiddleware } from './store';
 
-const sagaMiddleware = createSagaMiddleWare();
-
-const store = createStore(
-  reducer,
-  applyMiddleware(sagaMiddleware)
-)
-
-sagaMiddleware.run(rootSaga)
+runSagaMiddleware()
 
 ReactDOM.render(
   <StrictMode>
-    <Provider store={store}>
+    <Provider store={mainStore}>
       <App />
     </Provider>
   </StrictMode>,

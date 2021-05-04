@@ -1,28 +1,28 @@
-.LoginForm div + div { margin-top: 10px }
+.loginForm div + div { margin-top: 10px }
 
-.LoginForm {
+.loginForm {
   width: 400px;
   margin: 0 auto;
   position: relative
 }
 
-.LoginForm input, .LoginForm button { width: 80%; padding: 5px }
+.loginForm input, .loginForm button { width: 80%; padding: 5px }
 
-.LoginForm input { padding: 5px 10px; border: 1px solid darkgrey; }
+.loginForm input { padding: 5px 10px; border: 1px solid darkgrey; }
 
-.LoginForm button {
+.loginForm button {
   font-weight: 900;
   background-color: #1e88e5;
   color: white
 }
 
-.LoginForm input:focus::placeholder { color: transparent }
+.loginForm input:focus::placeholder { color: transparent }
 
-.ErrorBox {
+.errorBox {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 100%
 }
 
-.Error { color: crimson; font-weight: 600 }
+.error { color: crimson; font-weight: 600 }

@@ -1,4 +1,4 @@
-.Overlay {
+.overlay {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -11,7 +11,7 @@
   backdrop-filter: blur(6px)
 }
 
-.PopUpForm {
+.popUpForm {
   width: 300px;
   padding: 40px 10px;
   background-color: white;
@@ -24,9 +24,9 @@
 
 }
 
-.PopUpForm div + div { margin-top: 10px }
+.popUpForm div + div { margin-top: 10px }
 
-.PopUpForm img {
+.popUpForm img {
   width: 30px;
   position: absolute;
   top: 6px;
@@ -34,19 +34,19 @@
   cursor: pointer;
 }
 
-.PopUpForm input, .PopUpForm button { width: 100%; padding: 5px }
+.popUpForm input, .popUpForm button { width: 100%; padding: 5px }
 
-.PopUpForm input { border: 1px solid darkgrey }
+.popUpForm input { border: 1px solid darkgrey }
 
-.PopUpForm input:focus::placeholder { color: transparent }
+.popUpForm input:focus::placeholder { color: transparent }
 
-.PopUpForm button { background-color: #1e88e5; color: white; font-weight: 600 }
+.popUpForm button { background-color: #1e88e5; color: white; font-weight: 600 }
 
-.ErrorBox {
+.errorBox {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 100%
 }
 
-.Error { color: crimson; font-weight: 600 }
+.error { color: crimson; font-weight: 600 }

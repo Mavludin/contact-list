@@ -1,9 +1,9 @@
-.SearchForm { width: 275px; margin: 10px auto 0 auto }
+.searchForm { width: 275px; margin: 10px auto 0 auto }
 
-.SearchForm input, .SearchForm button { width: 100%; padding: 5px 5px 5px 10px }
+.searchForm input, .searchForm button { width: 100%; padding: 5px 5px 5px 10px }
 
-.SearchForm input { border: 1px solid darkgrey; border-radius: 10px }
+.searchForm input { border: 1px solid darkgrey; border-radius: 10px }
 
-.SearchForm input:focus::placeholder { color: transparent }
+.searchForm input:focus::placeholder { color: transparent }
 
-.SearchForm button { background-color: #1e88e5; color: white; font-weight: 600 }
+.searchForm button { background-color: #1e88e5; color: white; font-weight: 600 }
