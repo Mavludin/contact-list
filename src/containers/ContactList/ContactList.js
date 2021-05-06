@@ -27,7 +27,6 @@ export const ContactList = () => {
   // Setting the necessary data when the Edit button is clicked
   // and preparing the form
   const [selectedItemPos, setSelectedItemPos] = useState(0);
-  const [selectedItemId, setSelectedItemId] = useState(1);
   const [isPopUpVisible, setIsPopUpVisible] = useState(false);
   const [popUpPurpose, setPopUpPurpose] = useState("");
   const handlePopUpShow = (item, pos) => {
@@ -36,15 +35,14 @@ export const ContactList = () => {
     setInputName(item.name);
     setInputPhone(item.phone);
     setSelectedItemPos(pos);
-    setSelectedItemId(item.id);
   };
 
   // Handling the final 'Save' functionality
   const handleEdit = () => {
-    const tempApp = [...contactList];
-    tempApp[selectedItemPos].name = inputName;
-    tempApp[selectedItemPos].phone = inputPhone;
-    dispatch(editData(selectedItemId, tempApp[selectedItemPos]));
+    const tempArr = [...contactList];
+    tempArr[selectedItemPos].name = inputName;
+    tempArr[selectedItemPos].phone = inputPhone;
+    dispatch(editData(tempArr[selectedItemPos].id, tempArr[selectedItemPos]));
     setIsPopUpVisible(false);
   };
 
