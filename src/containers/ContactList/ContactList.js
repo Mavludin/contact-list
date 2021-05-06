@@ -8,6 +8,7 @@ import { SearchForm } from "./components/SearchForm/SearchForm";
 import { ContactItem } from "./components/ContactItem/ContactItem";
 import { selectContactList, selectShowLoader } from "../../store/reducer";
 import { useSearch } from "../../shared/hooks";
+import { AlertDialog } from "./components/AlertDialog/AlertDialog";
 
 export const ContactList = () => {
   const showLoader = useSelector(selectShowLoader);
@@ -65,8 +66,11 @@ export const ContactList = () => {
     setIsPopUpVisible(false);
   };
 
+  // Manage dialog state
+  const [dialogShow, setDialogShow] = useState(false);
+
   // Search hook
-  const { isSearching, searchedData, handleSearch } = useSearch()
+  const { isSearching, searchedData, handleSearch } = useSearch();
 
   let currentData = [];
   if (isSearching) currentData = searchedData;
@@ -87,8 +91,10 @@ export const ContactList = () => {
 
         {contactList.length !== 0 && (
           <ContactItem
+            setDialogShow={setDialogShow}
             handlePopUpShow={handlePopUpShow}
             currentData={currentData}
+            setSelectedItemPos={setSelectedItemPos}
           />
         )}
 
@@ -104,6 +110,14 @@ export const ContactList = () => {
             setInputPhone={setInputPhone}
             handleEdit={handleEdit}
             isPopUpVisible={isPopUpVisible}
+          />
+        )}
+
+        {dialogShow && (
+          <AlertDialog
+            dialogShow={dialogShow}
+            setDialogShow={setDialogShow}
+            selectedItemPos={selectedItemPos}
           />
         )}
       </div>

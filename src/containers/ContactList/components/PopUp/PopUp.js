@@ -14,7 +14,6 @@ export const PopUp = ({
   handleAdding,
   setInputName,
   setInputPhone,
-  isPopUpVisible,
   handleEdit,
 }) => {
   // Handling the Escape button click to close the form
@@ -29,14 +28,14 @@ export const PopUp = ({
   // Handling the Enter button click to submit the form
   useEffect(() => {
     const handleSubmit = (e) => {
-      if (isPopUpVisible && e.key === "Enter") {
+      if (e.key === "Enter") {
         if (popUpPurpose === "add") handleAdding();
         else if (popUpPurpose === "edit") handleEdit();
       }
     };
     window.addEventListener("keyup", handleSubmit);
     return () => window.removeEventListener("keyup", handleSubmit);
-  }, [handleAdding, isPopUpVisible, popUpPurpose, handleEdit]);
+  }, [handleAdding, popUpPurpose, handleEdit]);
 
   return (
     <Fragment>

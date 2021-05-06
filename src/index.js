@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { App } from './App';
@@ -8,11 +7,9 @@ import { mainStore, runSagaMiddleware } from './store';
 runSagaMiddleware()
 
 ReactDOM.render(
-  <StrictMode>
     <Provider store={mainStore}>
       <App />
-    </Provider>
-  </StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 

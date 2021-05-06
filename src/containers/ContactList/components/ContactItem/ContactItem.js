@@ -3,12 +3,11 @@ import deleteIcon from "../../../../assets/images/delete.svg";
 import editIcon from "../../../../assets/images/edit.svg";
 import smallLoader from "../../../../assets/images/small-loader.gif";
 import classes from "../../ContactList.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { deleteData } from "../../../../store/actions";
 import { selectServerReady } from "../../../../store/reducer";
 
-export const ContactItem = ({ handlePopUpShow, currentData }) => {
+export const ContactItem = ({ handlePopUpShow, currentData, setDialogShow, setSelectedItemPos }) => {
   const serverReady = useSelector(selectServerReady);
   const [listOpacity, setListOpacity] = useState("1");
 
@@ -18,7 +17,11 @@ export const ContactItem = ({ handlePopUpShow, currentData }) => {
     else setListOpacity("1");
   }, [serverReady]);
 
-  const dispatch = useDispatch();
+  // Prepare deleting
+  const prepareDeleting = (pos) => {
+    setDialogShow(true)
+    setSelectedItemPos(pos)
+  }
 
   return (
     <ul className={classes.contactList} style={{ opacity: listOpacity }}>
@@ -44,7 +47,7 @@ export const ContactItem = ({ handlePopUpShow, currentData }) => {
                 <img src={editIcon} alt="Edit" />
               </button>
               <button
-                onClick={() => dispatch(deleteData(item))}
+                onClick={() => prepareDeleting(pos)}
                 disabled={serverReady ? false : true}
               >
                 <img src={deleteIcon} alt="Trash can" />
