@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./AlertDialog.module.css";
+import PropTypes from 'prop-types';
 
 import { useDispatch, useSelector } from "react-redux";
 import { deleteData } from "../../../../store/actions";
@@ -46,3 +47,9 @@ export const AlertDialog = ({ setDialogShow, dialogShow, selectedItemPos }) => {
     </Dialog>
   );
 };
+
+AlertDialog.propTypes = {
+  setDialogShow: PropTypes.func.isRequired,
+  dialogShow: PropTypes.bool.isRequired,
+  selectedItemPos: PropTypes.number.isRequired
+}

@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Fragment, useEffect } from "react";
+import PropTypes from 'prop-types';
 
 import closeIcon from "../../../../assets/images/close.svg";
 
@@ -87,3 +88,15 @@ export const PopUp = ({
     </Fragment>
   );
 };
+
+PopUp.propTypes = {
+  setIsPopUpVisible: PropTypes.func.isRequired,
+  popUpPurpose: PropTypes.string.isRequired,
+  inputName: PropTypes.string.isRequired,
+  inputPhone: PropTypes.string.isRequired,
+  handleSave: PropTypes.func.isRequired,
+  handleAdding: PropTypes.func.isRequired,
+  setInputName: PropTypes.func.isRequired,
+  setInputPhone:PropTypes.func.isRequired,
+  handleEdit: PropTypes.func.isRequired
+}

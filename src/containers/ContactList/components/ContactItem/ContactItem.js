@@ -6,6 +6,7 @@ import classes from "../../ContactList.module.css";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { selectServerReady } from "../../../../store/reducer";
+import PropTypes from 'prop-types';
 
 export const ContactItem = ({ handlePopUpShow, currentData, setDialogShow, setSelectedItemPos }) => {
   const serverReady = useSelector(selectServerReady);
@@ -59,3 +60,10 @@ export const ContactItem = ({ handlePopUpShow, currentData, setDialogShow, setSe
     </ul>
   );
 };
+
+ContactItem.propTypes = {
+  handlePopUpShow: PropTypes.func.isRequired,
+  currentData: PropTypes.array.isRequired,
+  setDialogShow: PropTypes.func.isRequired,
+  setSelectedItemPos: PropTypes.func.isRequired
+}

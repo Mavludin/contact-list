@@ -1,8 +1,9 @@
 import classes from "./SearchForm.module.css";
+import PropTypes from 'prop-types';
 
 export const SearchForm = ({ handleSearch }) => {
   return (
-    <form action="" className={classes.searchForm}>
+    <form className={classes.searchForm}>
       <div>
         <input
           type="search"
@@ -13,3 +14,7 @@ export const SearchForm = ({ handleSearch }) => {
     </form>
   );
 };
+
+SearchForm.propTypes = {
+  handleSearch: PropTypes.func.isRequired
+}

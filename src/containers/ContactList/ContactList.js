@@ -76,6 +76,7 @@ export const ContactList = () => {
   if (isSearching) currentData = searchedData;
   else currentData = contactList;
 
+
   return (
     <Loader visible={showLoader}>
       <div className={classes.contactListPage}>
