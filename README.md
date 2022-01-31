@@ -17,18 +17,17 @@
 2) The CRUD asynchronous actions are managed by Redux Saga
 3) Formik is used to work with forms
 
-### Getting Started with Create React App
+## UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Authorization
+![Authorization](https://i.imgur.com/FL1UBw1.jpg)
+### Contact list page
+![Contact list page](https://i.imgur.com/nJyVMmH.jpg)
+### Adding new contact
+![Adding new contact](https://i.imgur.com/XDPhVw7.jpg)
+### Editing contact information
+![Editing contact information](https://i.imgur.com/WFSghKf.jpg)
+### Deleting a contact
+![Deleting a contact](https://i.imgur.com/7xMIEq9.jpg)
+### Live search
+![Live search](https://i.imgur.com/CwCKbFl.jpg)
